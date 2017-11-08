@@ -1,10 +1,10 @@
 {
-  "environments": {
-    "test": {
-      "scripts": {
-        "test-setup": "bundle install",
-        "test": "rails test"
-      }
-    }
-  }
+  "scripts": {
+    "postdeploy": "rails db:migrate"
+  },
+  "env": {
+    "RAILS_ENV": "test",
+    "RACK_ENV": "test",
+  },
+  "addons": ["heroku-postgresql"]
 }
